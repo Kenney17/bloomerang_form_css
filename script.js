@@ -605,7 +605,11 @@ var insertForm2298880 = function() {
 '  <h2>Processing...</h2><p>Your transaction is being processed. Please do not close your browser or leave this page.</p>' + 
 '</div>' + 
 '' + 
-'' +  '';var successHtml2298880 = '\u003cscript\u003ewindow.location.replace(\'https://www.familypromiseofspokane.org\')\u003c/script\u003e';( function($) {if (Bloomerang.useDonationId('2298880')) { 
+'' +  '';var successHtml2298880 = '<div class=\'donation-success\'>' +
+                                                 '  <h2>Thank You for Your Donation!</h2>' +
+                                                 '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
+                                                  '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/familypromiseofspokane\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/familypromiseofspokane\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e  \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
+                                                  '</div>';( function($) {if (Bloomerang.useDonationId('2298880')) { 
                                 Bloomerang.useProcessor('2297857', 'StripeConnect');
                               } else {
                                 html2298880 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
