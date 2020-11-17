@@ -681,7 +681,7 @@ var insertForm2298880 = function() {
                       function() { return Bloomerang.gRecaptchaLoaded; },
                       function() {
                           jQuery('.section.captcha').removeAttr('style');
-                          jQuery('form.donation-form').data('captcha-id', grecaptcha.render('captcha2298880', { 'sitekey' : '6Ldws-MZAAAAAFayy2f6zX6lLrO1PFEXycxRaO-q' }));
+                          jQuery('form.donation-form').data('captcha-id', grecaptcha.render('captcha2298880', { 'sitekey' : '6LcSz-MZAAAAANi0_pp6BQi-DSaEIVj6OWUuXiGO' }));
                       },
                       true,
                       true);
