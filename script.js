@@ -17,7 +17,7 @@ var insertForm2298880 = function() {
 '                display: inline-block; ' + 
 '                margin-left: 5px;}' + 
 '' + 
-'.donation-form .field .checkboxes{max-width:275px;' + 
+'.donation-form .field .checkboxes{' + 
 '                border: 1px solid #A9A9A9;' + 
 '                -webkit-transition: all .3s ease-out;' + 
 '                -moz-transition: all .3s ease-out;' + 
@@ -54,7 +54,7 @@ var insertForm2298880 = function() {
 '                     .donation-form .field select,' + 
 '                     .donation-form .field textarea,' + 
 '                     .donation-form #card-element{padding: 4px; ' + 
-'                max-width: 275px;' + 
+
 '                width: 96%}' + 
 '' + 
 '.donation-form .field .StripeElement{background-color: white;' + 
@@ -125,6 +125,9 @@ var insertForm2298880 = function() {
 '    <div class="errors hidden"></div>' + 
 '    <div class="section donation">' + 
 '      <h3>Donation</h3>' + 
+'<label>' +    
+'<input type="radio" name="demo">'+
+'</label>' +
 '      <div class="field radio 2300928 required" >' + 
 '<label for="2300928"><input id="2300928" name="donation-level" class="required" type="radio" value="2450.000000" maxlength="255"></input><span class="label">$2,450.00 - End homelessness for an entire family</span></label>' + 
 '</div>' + 
@@ -172,28 +175,120 @@ var insertForm2298880 = function() {
 '</div>' + 
 '    ' + 
 '    <div class="section contact">' + 
-'      <h3>Contact Information</h3>' + 
-'      <div class="field text first-name required" >' + 
+'      <h3>Donor Information</h3>' + 
+
+'<div id="test-container">' +
+'<div id="testy">'+
+'<div class="field text first-name required" >' + 
 '<label for="first-name"><span class="label">First Name</span><span class="required-star">*</span></label>' + 
 '<input id="first-name" name="first-name" class="required" type="text"></input>' + 
 '</div>' + 
 '<div class="field text last-name required" >' + 
 '<label for="last-name"><span class="label">Last Name</span><span class="required-star">*</span></label>' + 
 '<input id="last-name" name="last-name" class="required" type="text"></input>' + 
+'</div>' +
+'</div>' +
+
+'<div class="field  street-address required" id="address">' + 
+'<label for="street-address"><span class="label">Address</span><span class="required-star">*</span></label>' + 
+'<textarea id="street-address" name="street-address" class="required"></textarea>' + 
+'<div id="locations">' + 
+'<div class="field text city required" >' + 
+'<label for="city"><span class="label">City</span><span class="required-star">*</span></label>' + 
+'<input id="city" name="city" class="required" type="text" data-us-label="City" data-bm-label="Parish"></input>' + 
 '</div>' + 
-'<div class="field email email-address required" >' + 
-'<label for="email-address"><span class="label">Email</span><span class="required-star">*</span></label>' + 
-'<input id="email-address" name="email-address" class="email required" type="email" placeholder="someone@website.com"></input>' + 
+'<div class="field  state required" >' + 
+'<label for="state">State<span class="required-star">*</span></label>' + 
+'<select id="state" name="state" class="required"><option value=""></option>' + 
+'<option value="AL">Alabama</option>' + 
+'<option value="AK">Alaska</option>' + 
+'<option value="AS">American Samoa</option>' + 
+'<option value="AZ">Arizona</option>' + 
+'<option value="AR">Arkansas</option>' + 
+'<option value="AE">Armed Forces Africa, Canada, Europe, Middle East</option>' + 
+'<option value="AA">Armed Forces Americas (except Canada)</option>' + 
+'<option value="AP">Armed Forces Pacific</option>' + 
+'<option value="CA">California</option>' + 
+'<option value="CO">Colorado</option>' + 
+'<option value="CT">Connecticut</option>' + 
+'<option value="DE">Delaware</option>' + 
+'<option value="DC">District of Columbia</option>' + 
+'<option value="FL">Florida</option>' + 
+'<option value="GA">Georgia</option>' + 
+'<option value="GU">Guam</option>' + 
+'<option value="HI">Hawaii</option>' + 
+'<option value="ID">Idaho</option>' + 
+'<option value="IL">Illinois</option>' + 
+'<option value="IN">Indiana</option>' + 
+'<option value="IA">Iowa</option>' + 
+'<option value="KS">Kansas</option>' + 
+'<option value="KY">Kentucky</option>' + 
+'<option value="LA">Louisiana</option>' + 
+'<option value="ME">Maine</option>' + 
+'<option value="MD">Maryland</option>' + 
+'<option value="MA">Massachusetts</option>' + 
+'<option value="MI">Michigan</option>' + 
+'<option value="MN">Minnesota</option>' + 
+'<option value="MS">Mississippi</option>' + 
+'<option value="MO">Missouri</option>' + 
+'<option value="MT">Montana</option>' + 
+'<option value="NE">Nebraska</option>' + 
+'<option value="NV">Nevada</option>' + 
+'<option value="NH">New Hampshire</option>' + 
+'<option value="NJ">New Jersey</option>' + 
+'<option value="NM">New Mexico</option>' + 
+'<option value="NY">New York</option>' + 
+'<option value="NC">North Carolina</option>' + 
+'<option value="ND">North Dakota</option>' + 
+'<option value="OH">Ohio</option>' + 
+'<option value="OK">Oklahoma</option>' + 
+'<option value="OR">Oregon</option>' + 
+'<option value="PA">Pennsylvania</option>' + 
+'<option value="PR">Puerto Rico</option>' + 
+'<option value="RI">Rhode Island</option>' + 
+'<option value="SC">South Carolina</option>' + 
+'<option value="SD">South Dakota</option>' + 
+'<option value="TN">Tennessee</option>' + 
+'<option value="TX">Texas</option>' + 
+'<option value="VI">US Virgin Islands</option>' + 
+'<option value="UT">Utah</option>' + 
+'<option value="VT">Vermont</option>' + 
+'<option value="VA">Virginia</option>' + 
+'<option value="WA">Washington</option>' + 
+'<option value="WV">West Virginia</option>' + 
+'<option value="WI">Wisconsin</option>' + 
+'<option value="WY">Wyoming</option>' + 
+'</select>' + 
 '</div>' + 
-'<div class="field tel phone-number" >' + 
-'<label for="phone-number"><span class="label">Phone</span></label>' + 
-'<input id="phone-number" name="phone-number" class="phoneUS" type="tel"></input>' + 
+'<div class="field  province required" style="display: none">' + 
+'<label for="province">Province<span class="required-star">*</span></label>' + 
+'<select id="province" name="province" class="required"><option value=""></option>' + 
+'<option value="AB">Alberta</option>' + 
+'<option value="BC">British Columbia</option>' + 
+'<option value="MB">Manitoba</option>' + 
+'<option value="NB">New Brunswick</option>' + 
+'<option value="NL">Newfoundland and Labrador</option>' + 
+'<option value="NT">Northwest Territories</option>' + 
+'<option value="NS">Nova Scotia</option>' + 
+'<option value="NU">Nunavut</option>' + 
+'<option value="ON">Ontario</option>' + 
+'<option value="PE">Prince Edward Island</option>' + 
+'<option value="QC">Quebec</option>' + 
+'<option value="SK">Saskatchewan</option>' + 
+'<option value="YT">Yukon Territory</option>' + 
+'</select>' + 
 '</div>' + 
-'' + 
+'<div class="field number zip-code required" >' + 
+'<label for="zip-code"><span class="label">ZIP Code</span><span class="required-star">*</span></label>' + 
+'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" minlength="5" maxlength="10"></input>' + 
 '</div>' + 
-'    <div class="section billing-address">' + 
-'      <h3>Billing Address</h3>' + 
-'      <div class="field  country required" >' + 
+'<div class="field text postal-code required" style="display: none">' + 
+'<label for="postal-code"><span class="label">Postal Code</span><span class="required-star">*</span></label>' + 
+'<input id="postal-code" name="postal-code" class="required" type="text"></input>' + 
+'</div>' + 
+'</div>' + 
+'</div>'+
+'<div class="field  country required" >' + 
 '<label for="country">Country<span class="required-star">*</span></label>' + 
 '<select id="country" name="country" class="required"><option value=""></option>' + 
 '<option value="AF">Afghanistan</option>' + 
@@ -446,103 +541,19 @@ var insertForm2298880 = function() {
 '<option value="ZW">Zimbabwe</option>' + 
 '</select>' + 
 '</div>' + 
-'<div class="field  street-address required" >' + 
-'<label for="street-address"><span class="label">Address</span><span class="required-star">*</span></label>' + 
-'<textarea id="street-address" name="street-address" class="required"></textarea>' + 
+'<div class="field email email-address required" >' + 
+'<label for="email-address"><span class="label">Email</span><span class="required-star">*</span></label>' + 
+'<input id="email-address" name="email-address" class="email required" type="email" placeholder="someone@website.com"></input>' + 
 '</div>' + 
-'<div class="field text city required" >' + 
-'<label for="city"><span class="label">City</span><span class="required-star">*</span></label>' + 
-'<input id="city" name="city" class="required" type="text" data-us-label="City" data-bm-label="Parish"></input>' + 
+'<div class="field tel phone-number" >' + 
+'<label for="phone-number"><span class="label">Phone</span></label>' + 
+'<input id="phone-number" name="phone-number" class="phoneUS" type="tel"></input>' + 
 '</div>' + 
-'<div class="field  state required" >' + 
-'<label for="state">State<span class="required-star">*</span></label>' + 
-'<select id="state" name="state" class="required"><option value=""></option>' + 
-'<option value="AL">Alabama</option>' + 
-'<option value="AK">Alaska</option>' + 
-'<option value="AS">American Samoa</option>' + 
-'<option value="AZ">Arizona</option>' + 
-'<option value="AR">Arkansas</option>' + 
-'<option value="AE">Armed Forces Africa, Canada, Europe, Middle East</option>' + 
-'<option value="AA">Armed Forces Americas (except Canada)</option>' + 
-'<option value="AP">Armed Forces Pacific</option>' + 
-'<option value="CA">California</option>' + 
-'<option value="CO">Colorado</option>' + 
-'<option value="CT">Connecticut</option>' + 
-'<option value="DE">Delaware</option>' + 
-'<option value="DC">District of Columbia</option>' + 
-'<option value="FL">Florida</option>' + 
-'<option value="GA">Georgia</option>' + 
-'<option value="GU">Guam</option>' + 
-'<option value="HI">Hawaii</option>' + 
-'<option value="ID">Idaho</option>' + 
-'<option value="IL">Illinois</option>' + 
-'<option value="IN">Indiana</option>' + 
-'<option value="IA">Iowa</option>' + 
-'<option value="KS">Kansas</option>' + 
-'<option value="KY">Kentucky</option>' + 
-'<option value="LA">Louisiana</option>' + 
-'<option value="ME">Maine</option>' + 
-'<option value="MD">Maryland</option>' + 
-'<option value="MA">Massachusetts</option>' + 
-'<option value="MI">Michigan</option>' + 
-'<option value="MN">Minnesota</option>' + 
-'<option value="MS">Mississippi</option>' + 
-'<option value="MO">Missouri</option>' + 
-'<option value="MT">Montana</option>' + 
-'<option value="NE">Nebraska</option>' + 
-'<option value="NV">Nevada</option>' + 
-'<option value="NH">New Hampshire</option>' + 
-'<option value="NJ">New Jersey</option>' + 
-'<option value="NM">New Mexico</option>' + 
-'<option value="NY">New York</option>' + 
-'<option value="NC">North Carolina</option>' + 
-'<option value="ND">North Dakota</option>' + 
-'<option value="OH">Ohio</option>' + 
-'<option value="OK">Oklahoma</option>' + 
-'<option value="OR">Oregon</option>' + 
-'<option value="PA">Pennsylvania</option>' + 
-'<option value="PR">Puerto Rico</option>' + 
-'<option value="RI">Rhode Island</option>' + 
-'<option value="SC">South Carolina</option>' + 
-'<option value="SD">South Dakota</option>' + 
-'<option value="TN">Tennessee</option>' + 
-'<option value="TX">Texas</option>' + 
-'<option value="VI">US Virgin Islands</option>' + 
-'<option value="UT">Utah</option>' + 
-'<option value="VT">Vermont</option>' + 
-'<option value="VA">Virginia</option>' + 
-'<option value="WA">Washington</option>' + 
-'<option value="WV">West Virginia</option>' + 
-'<option value="WI">Wisconsin</option>' + 
-'<option value="WY">Wyoming</option>' + 
-'</select>' + 
+'' + 
+'<div id="test-container">' +
 '</div>' + 
-'<div class="field  province required" style="display: none">' + 
-'<label for="province">Province<span class="required-star">*</span></label>' + 
-'<select id="province" name="province" class="required"><option value=""></option>' + 
-'<option value="AB">Alberta</option>' + 
-'<option value="BC">British Columbia</option>' + 
-'<option value="MB">Manitoba</option>' + 
-'<option value="NB">New Brunswick</option>' + 
-'<option value="NL">Newfoundland and Labrador</option>' + 
-'<option value="NT">Northwest Territories</option>' + 
-'<option value="NS">Nova Scotia</option>' + 
-'<option value="NU">Nunavut</option>' + 
-'<option value="ON">Ontario</option>' + 
-'<option value="PE">Prince Edward Island</option>' + 
-'<option value="QC">Quebec</option>' + 
-'<option value="SK">Saskatchewan</option>' + 
-'<option value="YT">Yukon Territory</option>' + 
-'</select>' + 
-'</div>' + 
-'<div class="field number zip-code required" >' + 
-'<label for="zip-code"><span class="label">ZIP Code</span><span class="required-star">*</span></label>' + 
-'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" minlength="5" maxlength="10"></input>' + 
-'</div>' + 
-'<div class="field text postal-code required" style="display: none">' + 
-'<label for="postal-code"><span class="label">Postal Code</span><span class="required-star">*</span></label>' + 
-'<input id="postal-code" name="postal-code" class="required" type="text"></input>' + 
-'</div>' + 
+'    <div class="section billing-address">' + 
+
 '' + 
 '</div>' + 
 '    <div class="section payment">' + 
@@ -604,6 +615,8 @@ var insertForm2298880 = function() {
 '<div id="donation-processing-container" style="display: none">' + 
 '  <h2>Processing...</h2><p>Your transaction is being processed. Please do not close your browser or leave this page.</p>' + 
 '</div>' + 
+'</div>'+
+'</div>'+
 '' + 
 '' +  '';var successHtml2298880 = ' <script>document.body.scrollTop(0)</script><div class=\'donation-success\'>' +
                                                  '  <h2>Thank You for Your Donation!</h2>' +
