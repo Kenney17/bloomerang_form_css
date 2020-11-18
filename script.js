@@ -119,15 +119,14 @@ var insertForm2298880 = function() {
   '#spreedly-modal-overlay[style="visibility:hidden"]{display: none;}' + 
   '' + 
   '</style>' + 
-  '' + 
+  '<div id="success-container"></div>' +
   '<div id="donation-form-container">' + 
   '  <form id="donation-form" class="donation-form" method="post" onsubmit="event.preventDefault(); collectPayment();">' + 
   '    <div class="errors hidden"></div>' + 
   '    <div class="section donation">' + 
   '      <h3>Donation</h3>' + 
-  
-  '      <div class="field radio 2300928 required" >' + 
-  '<label for="2300928"><input id="2300928" name="donation-level" class="required" type="radio" value="2450.000000" maxlength="255"></input><span class="label">$2,450.00 - End homelessness for an entire family</span></label>' + 
+  '<div class="field radio 2300928 required" >' + 
+  '<label for="2300928"><input id="2300928" name="donation-level" type="radio" value="2450.000000" maxlength="255"></input><span class="label">$2,450.00 - End homelessness for an entire family</span></label>' + 
   '</div>' + 
   '<div class="field radio 2300929 required" >' + 
   '<label for="2300929"><input id="2300929" name="donation-level" class="required" type="radio" value="686.000000" maxlength="255"></input><span class="label">$686.00 - Give one week of holistic care and empowerment for an entire family</span></label>' + 
@@ -611,10 +610,12 @@ var insertForm2298880 = function() {
   '  </form>' + 
   '</div>' + 
   '</div>'+
-  '</div>'+
   '<div id="donation-processing-container" style="display: none">' + 
   '  <h2>Processing...</h2><p>Your transaction is being processed. Please do not close your browser or leave this page.</p>' + 
   '</div>' + 
+  '</div>'+
+  '' + 
+
   '' + 
   '' +  '';var successHtml2298880 = '<div class=\'donation-success\'>' +
                                                  '  <h2>Thank You for Your Donation!</h2>' +
@@ -784,13 +785,14 @@ var insertForm2298880 = function() {
   };
   Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess = function (response) {
       jQuery("#donation-processing-container").hide();
-      var formContainer = jQuery("#donation-form-container");
+      var formContainer = jQuery("#success-container");
       formContainer.show();
       formContainer.html(successHtml2298880);
       Bloomerang.scrollToElement(formContainer);
   };
   Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
       jQuery(".btn-submit-donation").prop("disabled", false).removeClass("disabled");
+
       Bloomerang.Util.updateDonateButtonText();
       jQuery("#donation-form-container .errors").removeClass("hidden").html(response.Message);
       jQuery("#donation-processing-container").hide();
@@ -1170,8 +1172,7 @@ var insertForm2298880 = function() {
     var processingMessage = jQuery("#donation-processing-container");
     
     processingMessage.show();
-    jQuery("#donation-form-container").hide();
-    Bloomerang.scrollToElement(processingMessage);
+    // jQuery("#donation-form-container").hide();
 
     var tmp = jQuery(".donation-form #recurring").prop("checked")
       ? Bloomerang.Api.recurringDonate()

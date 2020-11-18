@@ -85,12 +85,12 @@ textarea {
 }
 
 #test-container {
-	width: 55%;
+	width: 65%;
 }
 
 @media only screen and (max-width: 850px) {
 	#test-container{
-		width: 85%;
+		width: 75%;
 	}
   }
 
