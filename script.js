@@ -1167,7 +1167,6 @@ var insertForm2298880 = function() {
     Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
     Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
 
-
     var processingMessage = jQuery("#donation-processing-container");
     
     processingMessage.show();
