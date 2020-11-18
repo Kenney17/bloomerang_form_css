@@ -119,7 +119,6 @@ var insertForm2298880 = function() {
   '#spreedly-modal-overlay[style="visibility:hidden"]{display: none;}' + 
   '' + 
   '</style>' + 
-  '<div id="success-container"></div>' +
   '<div id="donation-form-container">' + 
   '  <form id="donation-form" class="donation-form" method="post" onsubmit="event.preventDefault(); collectPayment();">' + 
   '    <div class="errors hidden"></div>' + 
@@ -609,10 +608,8 @@ var insertForm2298880 = function() {
   '    </div>' + 
   '  </form>' + 
   '</div>' + 
+  '<div id="success-container"></div>' +
   '</div>'+
-  '<div id="donation-processing-container" style="display: none">' + 
-  '  <h2>Processing...</h2><p>Your transaction is being processed. Please do not close your browser or leave this page.</p>' + 
-  '</div>' + 
   '</div>'+
   '' + 
 
@@ -784,26 +781,24 @@ var insertForm2298880 = function() {
       jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
   };
   Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess = function (response) {
-      jQuery("#donation-processing-container").hide();
-      alert('success')
+      Bloomerang.Util.updateDonateButtonText();
+      var formContainer = jQuery("#success-container");
+      formContainer.show();
+      formContainer.html(successHtml2298880);
+      Bloomerang.scrollToElement(formContainer);
     };
     Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
-      var formContainer = jQuery("#success-container");
-    formContainer.show();
-    formContainer.html(successHtml2298880);
-    Bloomerang.scrollToElement(formContainer);
-      // jQuery(".btn-submit-donation").prop("disabled", false).removeClass("disabled");
-      // Bloomerang.Util.updateDonateButtonText();
-      // jQuery("#donation-form-container .errors").removeClass("hidden").html(response.Message);
-      // jQuery("#donation-processing-container").hide();
-      // jQuery("#donation-form-container").show();
-      // Bloomerang.scrollToElement(jQuery("#donation-form-container .errors"));
-      // Bloomerang.cancelFinancialSubmission(jQuery("#donation-form"));
-      // SpreedlyExpress.unload();
-      // Bloomerang.initSpreedly();
-      // if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
-      //   grecaptcha.reset(jQuery(".donation-form").data("captcha-id"));
-      // }
+      jQuery(".btn-submit-donation").prop("disabled", false).removeClass("disabled");
+      jQuery("#donation-form-container .errors").removeClass("hidden").html(response.Message);
+      jQuery("#donation-processing-container").hide();
+      jQuery("#donation-form-container").show();
+      Bloomerang.scrollToElement(jQuery("#donation-form-container .errors"));
+      Bloomerang.cancelFinancialSubmission(jQuery("#donation-form"));
+      SpreedlyExpress.unload();
+      Bloomerang.initSpreedly();
+      if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
+        grecaptcha.reset(jQuery(".donation-form").data("captcha-id"));
+      }
   };
   
   Bloomerang.Util.applyDonationCustomFields = function (obj, type) {
