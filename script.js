@@ -781,13 +781,13 @@ var insertForm2298880 = function() {
       jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
   };
   Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess = function (response) {
-      var formContainer = jQuery("#success-container");
-      formContainer.show();
-      formContainer.html(successHtml2298880);
-      Bloomerang.scrollToElement(formContainer);
+    var formContainer = jQuery("#success-container");
+    formContainer.show();
+    formContainer.html(successHtml2298880);
+    Bloomerang.scrollToElement(formContainer);
+    jQuery('.btn-submit-donation').val('your donation has been received')
   };
   Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
-    console.log(response)
       Bloomerang.Util.updateDonateButtonText();
       jQuery(".btn-submit-donation").prop("disabled", false).removeClass("disabled");
       jQuery("#donation-form-container .errors").removeClass("hidden").html(response.Message);
